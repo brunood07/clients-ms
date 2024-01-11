@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class AuthenticateClientUseCase {
 
-    @Value("${security.token.secret.candidate}")
+    @Value("${security.token.secret}")
     private String secretKey;
     @Autowired
     private ClientRepository clientRepository;

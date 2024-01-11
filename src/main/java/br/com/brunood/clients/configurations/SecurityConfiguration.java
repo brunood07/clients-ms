@@ -26,10 +26,10 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/client/authenticate").permitAll()
-                            .requestMatchers("/client").permitAll()
+                    auth.requestMatchers("/api/v1/client/auth").permitAll()
+                            .requestMatchers("/api/v1/client").permitAll()
+                            .requestMatchers("/api/v1/client/me").permitAll()
                             .requestMatchers(SWAGGER_LIST).permitAll();
-
                     auth.anyRequest().authenticated();
                 })
                 .addFilterBefore(securityFilter, BasicAuthenticationFilter.class);

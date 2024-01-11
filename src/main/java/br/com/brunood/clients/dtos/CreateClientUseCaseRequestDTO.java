@@ -1,5 +1,6 @@
 package br.com.brunood.clients.dtos;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -17,6 +18,7 @@ public class CreateClientUseCaseRequestDTO {
     @NotBlank(message = "document required")
     private String document;
     private String dateOfBirth;
+    @Email
     @NotBlank(message = "email required")
     private String email;
     private String phoneNumber;

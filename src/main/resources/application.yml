@@ -16,6 +16,9 @@ spring:
     database-platform: 'org.hibernate.dialect.PostgreSQLDialect'
     hibernate:
       ddl-auto: update
+security:
+  token:
+    secret: 'testesecret'
 
 server:
   port: 8084
